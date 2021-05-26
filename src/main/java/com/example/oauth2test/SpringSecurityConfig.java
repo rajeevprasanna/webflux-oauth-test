@@ -29,7 +29,8 @@ public class SpringSecurityConfig {
         http
                 .securityMatcher(new PathPatternParserServerWebExchangeMatcher("/secure"))
                 .authorizeExchange(exchanges -> exchanges.anyExchange().authenticated())
-                .oauth2Login();
+                .oauth2Client()
+                .and().oauth2Login();
         return http.build();
     }
 }
