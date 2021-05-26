@@ -1,0 +1,18 @@
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          idc:
+            client-id: test
+            client-secret: xxx
+            clientName: cas
+            authorization-grant-type: authorization_code
+            redirect-uri: https://x.y.com/login/oauth2/code/idc
+        provider:
+          idc:
+            authorization-uri: https://x.y.com/oauth2.0/authorize
+            user-info-uri: https://x.y.com/oauth2.0/profile
+            token-uri: https://x.y.com/oauth2.0/accessToken
+            user-name-attribute: id
